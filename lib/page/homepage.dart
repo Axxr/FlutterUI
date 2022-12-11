@@ -1,3 +1,4 @@
+import 'package:fltterapi/utils/responsive.dart';
 import 'package:fltterapi/widget/circle.dart';
 import 'package:fltterapi/widget/icon_container.dart';
 import 'package:flutter/material.dart';
@@ -12,9 +13,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    final double pinkSize = size.width * 0.85;
-    final double orangekSize = size.width * 0.63;
+    final Responsive responsive = Responsive.of(context);
+    final double pinkSize = responsive.wp(85);
+    final double orangekSize = responsive.wp(63);
 
     return Scaffold(
       body: Container(
@@ -46,8 +47,22 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             top: pinkSize * 0.4,
-            child: IconContainer(
-              size: size.width * 0.22,
+            child: Column(
+              children: [
+                IconContainer(
+                  size: responsive.wp(22),
+                ),
+                SizedBox(
+                  height: responsive.dp(3),
+                ),
+                Text(
+                  'Hola\nBienvenido de Nuevo!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: responsive.dp(1.7),
+                  ),
+                )
+              ],
             ),
           )
         ]),
