@@ -17,7 +17,10 @@ class IconContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(size * 0.18),
           boxShadow: [
             BoxShadow(
-                color: Colors.black12, blurRadius: 20, offset: Offset(0, 20)),
+              color: Colors.black12,
+              blurRadius: 20,
+              offset: Offset(0, 20),
+            ),
           ]),
       padding: EdgeInsets.all(size * 0.18),
       child: Center(

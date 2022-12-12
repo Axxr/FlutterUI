@@ -1,4 +1,5 @@
-import 'package:fltterapi/page/homepage.dart';
+import 'package:fltterapi/page/login_page.dart';
+import 'package:fltterapi/page/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -22,7 +23,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomePage(),
+      home: const LoginPage(),
+      routes: {
+        RegisterPage.routeName: (_) => RegisterPage(),
+        LoginPage.routeName: (_) => LoginPage(),
+      },
     );
   }
 }
